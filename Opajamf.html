@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patrocínio JAMF</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+padding: 20px;
+text-align: center;
+background-color: #f4f4f4;
+}
+h1 {
+font-size: 24px;
+margin-bottom: 20px;
+}
+button {
+padding: 15px 25px;
+font-size: 18px;
+margin: 10px;
+border: none;
+border-radius: 8px;
+background-color: #007bff;
+color: white;
+cursor: pointer;
+}
+button:hover {
+background-color: #0056b3;
+}
+button:active {
+transform: scale(0.98);
+}
+#button-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+width: 100%;
+}
+/* Ajuste para telas maiores */
+@media (min-width: 768px) {
+#button-container {
+flex-direction: row;
+justify-content: center;
+}
+button {
+margin: 10px 20px;
+}
+}
+</style>
+</head>
+<body>
+<h1>JAMF patrocina minha box?</h1>
+<div id="button-container">
+<button id="sim-btn" onclick="responderSim()">Sim</button>
+<button id="nao-btn" onclick="responderNao()">Não</button>
+</div>
+<script>
+function responderSim() {
+document.body.innerHTML = "<h2>Obrigado por clicar em Sim!</h2>";
+}
+function responderNao() {
+let simBtn = document.getElementById("sim-btn");
+let naoBtn = document.getElementById("nao-btn");
+let container = document.getElementById("button-container");
+// Inverte a posição dos botões
+container.insertBefore(naoBtn, simBtn);
+}
+</script>
+</body>
+</html>
+
+
